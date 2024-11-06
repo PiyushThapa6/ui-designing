@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marks and Grade Calculator</title>
+</head>
+<body>
+    <h1>Marks and Grade Calculator</h1>
+    <button onclick="calculate()">Calculate</button>
+
+    <script>
+        function calculate() {
+            var subject1 = parseFloat(prompt("Enter marks for Subject 1:"));
+            var subject2 = parseFloat(prompt("Enter marks for Subject 2:"));
+            var subject3 = parseFloat(prompt("Enter marks for Subject 3:"));
+
+            var total = subject1 + subject2 + subject3;
+            var percentage = (total / 300) * 100;
+            var grade;
+
+            if (percentage >= 90) {
+                grade = "A";
+            } else if (percentage >= 80) {
+                grade = "B";
+            } else if (percentage >= 70) {
+                grade = "C";
+            } else if (percentage >= 60) {
+                grade = "D";
+            } else {
+                grade = "F";
+            }
+
+            alert("Total: " + total + "\nPercentage: " + percentage + "%\nGrade: " + grade);
+        }
+    </script>
+</body>
+</html>

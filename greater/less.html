@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Compare Two Numbers</title>
+</head>
+<body>
+    <h2>Enter Two Numbers</h2>
+    <label for="num1">Number 1:</label>
+    <input type="number" id="num1">
+    <br><br>
+    <label for="num2">Number 2:</label>
+    <input type="number" id="num2">
+    <br><br>
+    <button onclick="compareNumbers()">Compare</button>
+    <p id="result"></p>
+
+    <script>
+        function compareNumbers() {
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+            var result;
+
+            if (num1 > num2) {
+                result = num1 + " is greater than " + num2;
+            } else if (num1 < num2) {
+                result = num2 + " is greater than " + num1;
+            } else {
+                result = "Both numbers are equal";
+            }
+
+            document.getElementById("result").innerText = result;
+        }
+    </script>
+</body>
+</html>
