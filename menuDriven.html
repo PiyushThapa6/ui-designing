@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu-Driven Calculator</title>
+</head>
+<body>
+    <h1>Menu-Driven Calculator</h1>
+    <button onclick="showMenu()">Open Calculator</button>
+
+    <script>
+        function showMenu() {
+            var choice;
+            do {
+                choice = parseInt(prompt("Select an operation:\n1. Addition\n2. Subtraction\n3. Multiplication\n4. Division\n5. Exit"));
+
+                if (choice >= 1 && choice <= 4) {
+                    var num1 = parseFloat(prompt("Enter the 1st number:"));
+                    var num2 = parseFloat(prompt("Enter the 2nd number:"));
+
+                    var result;
+                    switch (choice) {
+                        case 1:
+                            result = num1 + num2;
+                            alert("Result: " + result);
+                            break;
+                        case 2:
+                            result = num1 - num2;
+                            alert("Result: " + result);
+                            break;
+                        case 3:
+                            result = num1 * num2;
+                            alert("Result: " + result);
+                            break;
+                        case 4:
+                            if (num2 == 0) {
+                                alert("Cannot divide by zero.");
+                            } else {
+                                result = num1 / num2;
+                                alert("Result: " + result);
+                            }
+                            break;
+                    }
+                } else if (choice !== 5) {
+                    alert("Please select a valid option.");
+                }
+            } while (choice !== 5);
+        }
+    </script>
+</body>
+</html>
